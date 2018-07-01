@@ -48,6 +48,14 @@ public class TimerSignsPlugin extends JavaPlugin implements Listener {
 	public void onInteract(PlayerInteractEvent event) {
 		Block block = event.getClickedBlock();
 		
+		if (block == null) {
+			return;
+		}
+		
+		if (block.getState() == null) {
+			return;
+		}
+		
 		if (!(block.getState() instanceof Sign)) {
 			return;
 		}
